@@ -1,0 +1,27 @@
+A simple adaptation of [impress.js](https://github.com/bartaz/impress.js)
+to get it working with [TiddlySpace](http://tiddlyspace.com/) using the
+[tsapp](http://tsapp.tiddlyspace.com/) toolkit.
+
+See it running at http://chromatazoa.tiddlyspace.com/
+
+At the moment it will not work in other spaces without some additional
+changes to the `chromatazoa.js` file. The issues are:
+
+* The URL being used to select slides statically selects slides from
+  the chromatazoa space.
+* The ordering of those slides is controlled by sorting their
+  titles.
+
+Slides are:
+
+* Tiddlers with a tag of 'slide'
+* They may either be a type which can be rendered, or straight HTML
+* Fields are used to control CSS and impress functionality:
+  * _class field adds the provided string as class on the slide's
+    div
+  * _id field sets the id on the slide's div
+  * data-* sets the various -x, -y, -rotate, -scale settings as
+    described in the impress [soure html](https://github.com/bartaz/impress.js/blob/master/index.html)
+
+As with impress itself, this is not a no effort required solution, but
+it could probably be made to be one.

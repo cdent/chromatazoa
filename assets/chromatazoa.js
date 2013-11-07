@@ -1,4 +1,6 @@
 $(function() {
+	var spaceName = tiddlyweb.status.space.name;
+
 	function buildSlidesDom(tiddlers) {
 		var impressDiv = $('#impress');
 		$.each(tiddlers, function(index, tiddler) {
@@ -26,8 +28,8 @@ $(function() {
 
 	$.ajax({
 		dataType: 'json',
-		// XXX: replace with current space
-		url: '/bags/chromatazoa_public/tiddlers?select=tag:slide;sort=title;fat=1;render=1',
+		url: '/bags/' + spaceName +
+			'_public/tiddlers?select=tag:slide;sort=title;fat=1;render=1',
 		success: buildSlidesDom,
 	});
 });
